@@ -17,7 +17,7 @@ public class TestApp {
 	IOTGatewayRepo iotGatewayRepo;
 
 	public void doExecute() {
-		String[][] result = { 
+		String[][] input = { 
 				{ "Parle-G", "Food", "2017-07-23 13:10:00", "3" },
 				{ "Parle-G", "Food", "2017-07-23 13:11:00", "3" },
 				{ "Parle-G", "Food", "2017-07-23 13:12:00", "3" },
@@ -27,7 +27,7 @@ public class TestApp {
 				};
 
 
-		List<RawItemInsight> items = iotGatewayRepo.getItemList(result);
+		List<RawItemInsight> items = iotGatewayRepo.getItemList(input);
 		try {
 			List<?> output = engineCore.doProcess(items, 1);
 			System.out.println(output.size());
