@@ -50,10 +50,9 @@ public class EngineCore {
 			long timeDiff = TimeStampUtil.timestampDiff(current.getTimestamp(), prev.getTimestamp());
 
 			if (timeDiff > minDiffDuration)
-				for (int j = 0; j < timeDiff - 1; j++) {
-
+				for (int j = 0; j < timeDiff - 1; j++)
 					missedTimeSlots.add(TimeStampUtil.increment(prev.getTimestamp(), minDiffDuration + j));
-				}
+
 		}
 		return missedTimeSlots;
 	}
